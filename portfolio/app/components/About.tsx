@@ -6,7 +6,7 @@ export default function About() {
     },
     {
       title: "Internship",
-      value: "1",
+      value: "2",
     },
     {
       title: "Technologies",
