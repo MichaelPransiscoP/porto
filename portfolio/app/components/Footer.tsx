@@ -152,7 +152,7 @@ export default function Footer() {
           >
             <ArrowUp size={18} />
 
-            Back to Topi
+            Back to Top
 
           </a>
 
