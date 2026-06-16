@@ -12,168 +12,172 @@ export default function Contact() {
   return (
     <section
       id="contact"
-      className="py-28 bg-[#020617]"
+      className="contact-section"
     >
-      <div className="max-w-7xl mx-auto px-6">
+      <div className="contact-container">
 
-        <div className="text-center mb-16">
+        <div className="contact-header">
 
-          <span className="uppercase tracking-[6px] text-cyan-400">
+          <span className="contact-subtitle">
             Contact
           </span>
 
-          <h2 className="text-5xl font-bold mt-4">
+          <h2 className="contact-title">
             Let's Work Together
           </h2>
 
-          <p className="text-gray-400 mt-5 max-w-2xl mx-auto">
+          <p className="contact-description">
             Interested in working together or have a project in mind?
             Feel free to reach out through any of the platforms below.
           </p>
 
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-10">
+        <div className="contact-content">
 
-          {/* LEFT */}
+          <div className="contact-info">
 
-          <div className="space-y-6">
+            <div className="contact-card">
 
-            <div className="bg-[#111827] rounded-2xl p-6 border border-white/10 hover:border-cyan-400 transition">
+              <div className="contact-card-content">
 
-              <div className="flex items-center gap-4">
-
-                <div className="w-12 h-12 rounded-xl bg-cyan-500 flex items-center justify-center">
-                  <Mail className="text-black" />
+                <div className="contact-icon">
+                  <Mail />
                 </div>
 
                 <div>
-                  <h3 className="font-semibold">
+
+                  <h3 className="contact-label">
                     Email
                   </h3>
 
-                  <p className="text-gray-400">
+                  <p className="contact-value">
                     wermichael211@gmail.com
                   </p>
+
                 </div>
 
               </div>
 
             </div>
 
-            <div className="bg-[#111827] rounded-2xl p-6 border border-white/10 hover:border-cyan-400 transition">
+            <div className="contact-card">
 
-              <div className="flex items-center gap-4">
+              <div className="contact-card-content">
 
-                <div className="w-12 h-12 rounded-xl bg-cyan-500 flex items-center justify-center">
-                  <Phone className="text-black" />
+                <div className="contact-icon">
+                  <Phone />
                 </div>
 
                 <div>
-                  <h3 className="font-semibold">
+
+                  <h3 className="contact-label">
                     Phone
                   </h3>
 
-                  <p className="text-gray-400">
+                  <p className="contact-value">
                     +62 819-4917-9779
                   </p>
+
                 </div>
 
               </div>
 
             </div>
 
-            <div className="bg-[#111827] rounded-2xl p-6 border border-white/10 hover:border-cyan-400 transition">
+            <div className="contact-card">
 
-              <div className="flex items-center gap-4">
+              <div className="contact-card-content">
 
-                <div className="w-12 h-12 rounded-xl bg-cyan-500 flex items-center justify-center">
-                  <MapPin className="text-black" />
+                <div className="contact-icon">
+                  <MapPin />
                 </div>
 
                 <div>
-                  <h3 className="font-semibold">
+
+                  <h3 className="contact-label">
                     Location
                   </h3>
 
-                  <p className="text-gray-400">
+                  <p className="contact-value">
                     Bandung, Indonesia
                   </p>
+
                 </div>
 
               </div>
 
             </div>
 
-            <div className="flex gap-4 pt-4">
+            <div className="social-links">
 
               <a
                 href="https://github.com/MichaelPransiscoP"
                 target="_blank"
-                className="w-14 h-14 rounded-full bg-[#111827] border border-white/10 flex items-center justify-center hover:bg-cyan-500 hover:text-black transition"
+                rel="noopener noreferrer"
+                className="social-link"
               >
                 <Image
-                      src="/icons/github.png"
-                      alt="github"
-                      width={28}
-                      height={28}
-                  />
+                  src="/icons/github.png"
+                  alt="github"
+                  width={28}
+                  height={28}
+                />
               </a>
 
               <a
                 href="https://www.linkedin.com/in/michaelpransiscopurba/"
                 target="_blank"
-                className="w-14 h-14 rounded-full bg-[#111827] border border-white/10 flex items-center justify-center hover:bg-cyan-500 hover:text-black transition"
+                rel="noopener noreferrer"
+                className="social-link"
               >
                 <Image
-                      src="/icons/linkedin.png"
-                      alt="linkedin"
-                      width={28}
-                      height={28}
-                  />
+                  src="/icons/linkedin.png"
+                  alt="linkedin"
+                  width={28}
+                  height={28}
+                />
               </a>
 
             </div>
 
           </div>
 
-          {/* RIGHT */}
+          <div className="contact-form-card">
 
-          <div className="bg-[#111827] rounded-3xl p-8 border border-white/10">
-
-            <h3 className="text-2xl font-bold mb-6">
+            <h3 className="contact-form-title">
               Send Message
             </h3>
 
-            <form className="space-y-5">
+            <form className="contact-form">
 
               <input
                 type="text"
                 placeholder="Your Name"
-                className="w-full bg-[#1e293b] rounded-xl p-4 outline-none border border-transparent focus:border-cyan-400"
+                className="contact-input"
               />
 
               <input
                 type="email"
                 placeholder="Your Email"
-                className="w-full bg-[#1e293b] rounded-xl p-4 outline-none border border-transparent focus:border-cyan-400"
+                className="contact-input"
               />
 
               <input
                 type="text"
                 placeholder="Subject"
-                className="w-full bg-[#1e293b] rounded-xl p-4 outline-none border border-transparent focus:border-cyan-400"
+                className="contact-input"
               />
 
               <textarea
                 rows={6}
                 placeholder="Your Message"
-                className="w-full bg-[#1e293b] rounded-xl p-4 outline-none border border-transparent focus:border-cyan-400 resize-none"
+                className="contact-textarea"
               />
 
               <button
                 type="submit"
-                className="flex items-center gap-2 bg-cyan-500 hover:bg-cyan-400 text-black font-semibold px-6 py-3 rounded-xl transition"
+                className="contact-button"
               >
                 <Send size={18} />
                 Send Message

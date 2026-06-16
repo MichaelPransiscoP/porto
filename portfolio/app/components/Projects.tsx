@@ -1,4 +1,5 @@
 "use client";
+
 import Image from "next/image";
 import {
   ExternalLink,
@@ -15,82 +16,66 @@ const projects = [
     icon: Brain,
     description:
       "Sudoku Solver menggunakan Backtracking, AC3, dan MRV untuk menghasilkan solusi yang optimal.",
-
     tech: [
       "JavaScript",
       "Backtracking",
       "AC3",
       "MRV",
     ],
-
     demo:
-      "https://michaelpransiscop.Github.io/proyek-game/",
-
-    GithubIcon:
-      "https://github.com/MichaelPransiscoP/proyek-game.git",
+      "https://michaelpransiscop.github.io/proyek-game/",
+    github:
+      "https://github.com/MichaelPransiscoP/proyek-game",
   },
-
   {
     title: "Fishing Game",
     image: "/projects/fishing.png",
     icon: Gamepad2,
-
     description:
       "Mini browser game dengan gameplay sederhana menggunakan HTML, CSS dan JavaScript.",
-
     tech: [
       "JavaScript",
       "HTML",
       "CSS",
       "Canvas",
     ],
-
     demo:
-      "https://michaelpransiscop.Github.io/proyek-fishing-game/",
-
-    GithubIcon:
-      "https://github.com/MichaelPransiscoP/proyek-fishing-game.git",
+      "https://michaelpransiscop.github.io/proyek-fishing-game/",
+    github:
+      "https://github.com/MichaelPransiscoP/proyek-fishing-game",
   },
-
   {
     title: "Pinkie E-Wallet",
     image: "/projects/ewallet.jpg",
     icon: Wallet,
-
     description:
       "Modern E-Wallet UI Design dengan fitur Transfer, Top Up, Payment dan QR.",
-
     tech: [
       "Flutter",
       "UI/UX",
       "Finance",
     ],
-
-    demo: "https://github.com/user-attachments/files/28852633/Pinkie_Ewallet.pdf",
-
-    GithubIcon:
-      "https://github.com/JuanNathaniel/Pinkie.git",
+    demo:
+      "https://github.com/user-attachments/files/28852633/Pinkie_Ewallet.pdf",
+    github:
+      "https://github.com/JuanNathaniel/Pinkie",
   },
-
   {
     title: "Lung Cancer Prediction",
     image: "/projects/lung.jpg",
     icon: Database,
-
     description:
       "Machine Learning menggunakan Random Forest, RFECV dan Hyperparameter Tuning.",
-
     tech: [
       "Python",
       "Random Forest",
       "RFECV",
       "Machine Learning",
     ],
-
-    demo: "https://github.com/MichaelPransiscoP/Implementasi-Random-Forest-untuk-Prediksi-Kanker-Paru-Paru.git",
-
-    GithubIcon:
-      "https://github.com/MichaelPransiscoP/Implementasi-Random-Forest-untuk-Prediksi-Kanker-Paru-Paru.git",
+    demo:
+      "https://github.com/MichaelPransiscoP/Implementasi-Random-Forest-untuk-Prediksi-Kanker-Paru-Paru",
+    github:
+      "https://github.com/MichaelPransiscoP/Implementasi-Random-Forest-untuk-Prediksi-Kanker-Paru-Paru",
   },
 ];
 
@@ -98,94 +83,99 @@ export default function Projects() {
   return (
     <section
       id="projects"
-      className="py-28 bg-[#030712]"
+      className="projects-section"
     >
-      <div className="max-w-7xl mx-auto px-6">
+      <div className="projects-container">
 
-        <div className="text-center mb-16">
+        <div className="projects-header">
 
-          <span className="uppercase tracking-[6px] text-cyan-400">
+          <span className="projects-subtitle">
             Portfolio
           </span>
 
-          <h2 className="text-5xl font-bold mt-4">
+          <h2 className="projects-title">
             Featured Projects
           </h2>
 
-          <p className="text-gray-400 mt-5 max-w-2xl mx-auto">
+          <p className="projects-description">
             Some of my favorite projects in Backend Development,
             Artificial Intelligence and Web Development.
           </p>
 
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-8">
+        <div className="projects-grid">
 
           {projects.map((project) => {
             const Icon = project.icon;
 
             return (
-              <div
+              <article
                 key={project.title}
-                className="group rounded-3xl overflow-hidden bg-[#111827] border border-white/10 hover:border-cyan-400 transition duration-500 hover:-translate-y-2"
+                className="project-card"
               >
-                <div className="overflow-hidden">
+
+                <div className="project-image-wrapper">
 
                   <img
                     src={project.image}
                     alt={project.title}
-                    className="w-full h-64 object-cover group-hover:scale-110 transition duration-700"
+                    className="project-image"
                   />
 
                 </div>
 
-                <div className="p-8">
+                <div className="project-content">
 
-                  <div className="flex items-center gap-3">
+                  <div className="project-header">
 
                     <Icon
-                      className="text-cyan-400"
                       size={28}
+                      className="project-icon"
                     />
 
-                    <h3 className="text-2xl font-bold">
+                    <h3 className="project-title">
                       {project.title}
                     </h3>
 
                   </div>
 
-                  <p className="text-gray-400 mt-5 leading-7">
+                  <p className="project-description">
                     {project.description}
                   </p>
 
-                  <div className="flex flex-wrap gap-3 mt-6">
+                  <div className="project-tech-list">
 
                     {project.tech.map((tech) => (
+
                       <span
                         key={tech}
-                        className="px-3 py-1 rounded-full bg-cyan-500/10 text-cyan-300 text-sm border border-cyan-500/20"
+                        className="project-tech-badge"
                       >
                         {tech}
                       </span>
+
                     ))}
 
                   </div>
 
-                  <div className="flex gap-4 mt-8">
+                  <div className="project-actions">
 
                     <a
                       href={project.demo}
                       target="_blank"
-                      className="flex items-center gap-2 bg-cyan-500 hover:bg-cyan-400 transition px-5 py-3 rounded-xl text-black font-semibold"
+                      rel="noopener noreferrer"
+                      className="project-demo-button"
                     >
                       <ExternalLink size={18} />
                       Live Demo
                     </a>
 
                     <a
-                      href={project.GithubIcon}
+                      href={project.github}
                       target="_blank"
-                      className="flex items-center gap-2 border border-gray-600 hover:border-cyan-400 px-5 py-3 rounded-xl transition"
+                      rel="noopener noreferrer"
+                      className="project-github-button"
                     >
                       <Image
                         src="/icons/github.png"
@@ -200,11 +190,12 @@ export default function Projects() {
 
                 </div>
 
-              </div>
+              </article>
             );
           })}
 
         </div>
+
       </div>
     </section>
   );

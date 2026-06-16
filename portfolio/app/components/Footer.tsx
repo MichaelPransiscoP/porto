@@ -7,22 +7,20 @@ import {
 
 export default function Footer() {
   return (
-    <footer className="bg-[#030712] border-t border-white/10">
+    <footer className="footer">
 
-      <div className="max-w-7xl mx-auto px-6 py-20">
+      <div className="footer-container">
 
-        <div className="grid lg:grid-cols-3 gap-12">
+        <div className="footer-grid">
 
-          {/* Left */}
+          <div className="footer-about">
 
-          <div>
-
-            <h2 className="text-3xl font-bold">
+            <h2 className="footer-logo">
               Michael
-              <span className="text-cyan-400">.</span>
+              <span className="footer-logo-dot">.</span>
             </h2>
 
-            <p className="mt-5 text-gray-400 leading-8">
+            <p className="footer-description">
               Backend Developer passionate about
               Artificial Intelligence, Machine Learning,
               and scalable web applications.
@@ -30,47 +28,45 @@ export default function Footer() {
 
           </div>
 
-          {/* Center */}
+          <div className="footer-links">
 
-          <div>
-
-            <h3 className="text-xl font-semibold mb-5">
+            <h3 className="footer-heading">
               Quick Links
             </h3>
 
-            <div className="flex flex-col gap-3">
+            <div className="footer-menu">
 
               <a
                 href="#about"
-                className="text-gray-400 hover:text-cyan-400 transition"
+                className="footer-link"
               >
                 About
               </a>
 
               <a
                 href="#skills"
-                className="text-gray-400 hover:text-cyan-400 transition"
+                className="footer-link"
               >
                 Skills
               </a>
 
               <a
                 href="#experience"
-                className="text-gray-400 hover:text-cyan-400 transition"
+                className="footer-link"
               >
                 Experience
               </a>
 
               <a
                 href="#projects"
-                className="text-gray-400 hover:text-cyan-400 transition"
+                className="footer-link"
               >
                 Projects
               </a>
 
               <a
                 href="#contact"
-                className="text-gray-400 hover:text-cyan-400 transition"
+                className="footer-link"
               >
                 Contact
               </a>
@@ -79,45 +75,45 @@ export default function Footer() {
 
           </div>
 
-          {/* Right */}
+          <div className="footer-connect">
 
-          <div>
-
-            <h3 className="text-xl font-semibold mb-5">
+            <h3 className="footer-heading">
               Connect
             </h3>
 
-            <div className="flex gap-4">
+            <div className="footer-socials">
 
               <a
-                href="https://Github.com/MichaelPransiscoP"
+                href="https://github.com/MichaelPransiscoP"
                 target="_blank"
-                className="w-12 h-12 rounded-full bg-[#111827] flex items-center justify-center hover:bg-cyan-500 hover:text-black transition"
+                rel="noopener noreferrer"
+                className="footer-social-link"
               >
                 <Image
-                      src="/icons/github.png"
-                      alt="github"
-                      width={28}
-                      height={28}
-                  />
+                  src="/icons/github.png"
+                  alt="github"
+                  width={28}
+                  height={28}
+                />
               </a>
 
               <a
-                href="https://www.Linkedin.com/in/michaelpransiscopurba/"
+                href="https://www.linkedin.com/in/michaelpransiscopurba/"
                 target="_blank"
-                className="w-12 h-12 rounded-full bg-[#111827] flex items-center justify-center hover:bg-cyan-500 hover:text-black transition"
+                rel="noopener noreferrer"
+                className="footer-social-link"
               >
                 <Image
-                      src="/icons/linkedin.png"
-                      alt="linkedin"
-                      width={28}
-                      height={28}
-                  />
+                  src="/icons/linkedin.png"
+                  alt="linkedin"
+                  width={28}
+                  height={28}
+                />
               </a>
 
               <a
                 href="mailto:wermichael211@gmail.com"
-                className="w-12 h-12 rounded-full bg-[#111827] flex items-center justify-center hover:bg-cyan-500 hover:text-black transition"
+                className="footer-social-link"
               >
                 <Mail />
               </a>
@@ -126,7 +122,7 @@ export default function Footer() {
 
             <a
               href="/cv.pdf"
-              className="inline-block mt-8 bg-cyan-500 hover:bg-cyan-400 transition text-black font-semibold px-6 py-3 rounded-xl"
+              className="footer-resume-button"
             >
               Download Resume
             </a>
@@ -135,15 +131,15 @@ export default function Footer() {
 
         </div>
 
-        <div className="border-t border-white/10 mt-16 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+        <div className="footer-bottom">
 
-          <p className="text-gray-500 text-sm flex items-center gap-2">
+          <p className="footer-copyright">
 
             Made with
 
             <Heart
               size={16}
-              className="text-red-500 fill-red-500"
+              className="footer-heart"
             />
 
             by Michael Pransisco Purba © {new Date().getFullYear()}
@@ -152,7 +148,7 @@ export default function Footer() {
 
           <a
             href="#"
-            className="flex items-center gap-2 bg-[#111827] hover:bg-cyan-500 hover:text-black transition px-4 py-2 rounded-xl"
+            className="footer-back-to-top"
           >
             <ArrowUp size={18} />
 

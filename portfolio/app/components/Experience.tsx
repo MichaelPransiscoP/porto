@@ -49,21 +49,21 @@ export default function Experience() {
   return (
     <section
       id="experience"
-      className="py-24 bg-[#020617]"
+      className="experience-section"
     >
-      <div className="max-w-7xl mx-auto px-6">
+      <div className="experience-container">
 
-        <div className="text-center mb-20">
+        <div className="experience-header">
 
-          <span className="uppercase tracking-[6px] text-cyan-400">
+          <span className="experience-subtitle">
             Experience
           </span>
 
-          <h2 className="text-5xl font-bold mt-4">
+          <h2 className="experience-title">
             My Journey
           </h2>
 
-          <p className="text-gray-400 mt-6 max-w-3xl mx-auto">
+          <p className="experience-description">
             Throughout internships and organizational experiences,
             I have developed skills in backend development,
             AI, database systems, and collaborative software engineering.
@@ -71,65 +71,73 @@ export default function Experience() {
 
         </div>
 
-        <div className="relative">
+        <div className="experience-timeline">
 
-          {/* Vertical Line */}
+          <div className="timeline-line"></div>
 
-          <div className="absolute left-5 top-0 bottom-0 w-[2px] bg-cyan-500/30 hidden md:block"></div>
-
-          <div className="space-y-12">
+          <div className="timeline-list">
 
             {experiences.map((item) => (
 
               <div
                 key={item.company}
-                className="relative md:pl-16"
+                className="timeline-item"
               >
 
-                <div className="hidden md:flex absolute left-0 top-2 w-10 h-10 rounded-full bg-cyan-500 items-center justify-center">
-                  <Briefcase size={18} className="text-black" />
+                <div className="timeline-icon">
+
+                  <Briefcase size={18} />
+
                 </div>
 
-                <div className="bg-[#111827] rounded-3xl border border-white/10 hover:border-cyan-400 transition duration-300 p-8">
+                <div className="timeline-card">
 
-                  <h3 className="text-2xl font-bold">
+                  <h3 className="timeline-position">
                     {item.position}
                   </h3>
 
-                  <h4 className="text-cyan-400 text-lg mt-2">
+                  <h4 className="timeline-company">
                     {item.company}
                   </h4>
 
-                  <div className="flex flex-wrap gap-6 mt-4 text-gray-400">
+                  <div className="timeline-meta">
 
-                    <div className="flex items-center gap-2">
+                    <div className="timeline-meta-item">
+
                       <Calendar size={16} />
+
                       {item.period}
+
                     </div>
 
-                    <div className="flex items-center gap-2">
+                    <div className="timeline-meta-item">
+
                       <MapPin size={16} />
+
                       {item.location}
+
                     </div>
 
                   </div>
 
-                  <div className="mt-6 space-y-4">
+                  <div className="achievement-list">
 
                     {item.achievements.map((achievement) => (
 
                       <div
                         key={achievement}
-                        className="flex gap-3"
+                        className="achievement-item"
                       >
+
                         <CheckCircle2
-                          className="text-cyan-400 mt-1 flex-shrink-0"
                           size={18}
+                          className="achievement-icon"
                         />
 
-                        <p className="text-gray-300">
+                        <p className="achievement-text">
                           {achievement}
                         </p>
+
                       </div>
 
                     ))}

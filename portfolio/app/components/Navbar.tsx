@@ -45,87 +45,91 @@ export default function Navbar() {
 
   return (
     <header
-      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
+      className={`navbar ${
         scrolled
-          ? "backdrop-blur-xl bg-black/60 border-b border-white/10 shadow-lg"
-          : "bg-transparent"
+          ? "navbar-scrolled"
+          : "navbar-top"
       }`}
     >
-      <div className="max-w-7xl mx-auto h-20 flex items-center justify-between px-6">
+      <div className="navbar-container">
 
-        {/* Logo */}
-
-        <Link href="/">
+        <Link
+          href="/"
+          className="navbar-brand"
+        >
           <div>
-            <h1 className="text-2xl font-bold">
-              Michael<span className="text-cyan-400">.</span>
+
+            <h1 className="navbar-logo">
+              Michael
+              <span className="navbar-logo-dot">
+                .
+              </span>
             </h1>
 
-            <p className="text-xs text-gray-400">
+            <p className="navbar-tagline">
               Backend • AI Engineer
             </p>
+
           </div>
         </Link>
 
-        {/* Desktop */}
-
-        <nav className="hidden lg:flex gap-8 items-center">
+        <nav className="navbar-menu">
 
           {navItems.map((item) => (
+
             <a
               key={item.name}
               href={item.href}
-              className="text-gray-300 hover:text-cyan-400 transition"
+              className="navbar-link"
             >
               {item.name}
             </a>
+
           ))}
 
         </nav>
 
-        {/* Right */}
-
-        <div className="hidden lg:flex gap-4 items-center">
+        <div className="navbar-actions">
 
           <a
             href="https://github.com/MichaelPransiscoP"
             target="_blank"
-            className="hover:text-cyan-400 transition"
+            rel="noopener noreferrer"
+            className="navbar-social"
           >
             <Image
               src="/icons/github.png"
               alt="github"
               width={28}
               height={28}
-          />
+            />
           </a>
 
           <a
             href="https://www.linkedin.com/in/michaelpransiscopurba/"
             target="_blank"
-            className="hover:text-cyan-400 transition"
+            rel="noopener noreferrer"
+            className="navbar-social"
           >
             <Image
-    src="/icons/linkedin.png"
-    alt="linkedin"
-    width={28}
-    height={28}
-/>
+              src="/icons/linkedin.png"
+              alt="linkedin"
+              width={28}
+              height={28}
+            />
           </a>
 
           <a
             href="/cv.pdf"
-            className="bg-cyan-500 hover:bg-cyan-400 text-black font-semibold px-5 py-2 rounded-xl transition"
+            className="navbar-resume-button"
           >
             Resume
           </a>
 
         </div>
 
-        {/* Mobile Button */}
-
         <button
-          className="lg:hidden"
+          className="navbar-toggle"
           onClick={() => setOpen(!open)}
         >
           {open ? (
@@ -134,51 +138,57 @@ export default function Navbar() {
             <Menu size={30} />
           )}
         </button>
+
       </div>
 
-      {/* Mobile Menu */}
-
       <div
-        className={`lg:hidden transition-all duration-300 overflow-hidden ${
-          open ? "max-h-96" : "max-h-0"
+        className={`navbar-mobile ${
+          open
+            ? "navbar-mobile-open"
+            : "navbar-mobile-closed"
         }`}
       >
-        <div className="bg-[#0f172a] border-t border-white/10 px-6 py-6 flex flex-col gap-5">
+
+        <div className="navbar-mobile-content">
 
           {navItems.map((item) => (
+
             <a
               key={item.name}
               href={item.href}
               onClick={() => setOpen(false)}
-              className="text-lg hover:text-cyan-400"
+              className="navbar-mobile-link"
             >
               {item.name}
             </a>
+
           ))}
 
-          <div className="flex gap-4 mt-4">
+          <div className="navbar-mobile-socials">
 
             <a
               href="https://github.com/MichaelPransiscoP"
               target="_blank"
+              rel="noopener noreferrer"
             >
               <Image
-                  src="/icons/github.png"
-                  alt="github"
-                  width={28}
-                  height={28}
+                src="/icons/github.png"
+                alt="github"
+                width={28}
+                height={28}
               />
             </a>
 
             <a
               href="https://www.linkedin.com/in/michaelpransiscopurba/"
               target="_blank"
+              rel="noopener noreferrer"
             >
               <Image
-                  src="/icons/linkedin.png"
-                  alt="linkedin"
-                  width={28}
-                  height={28}
+                src="/icons/linkedin.png"
+                alt="linkedin"
+                width={28}
+                height={28}
               />
             </a>
 
@@ -186,13 +196,15 @@ export default function Navbar() {
 
           <a
             href="/cv.pdf"
-            className="mt-4 bg-cyan-500 text-center text-black py-3 rounded-xl font-semibold"
+            className="navbar-mobile-resume-button"
           >
             Download Resume
           </a>
 
         </div>
+
       </div>
+
     </header>
   );
 }
