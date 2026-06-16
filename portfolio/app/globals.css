@@ -4,7 +4,7 @@
   --color-primary: #22d3ee;
   --color-primary-hover: #67e8f9;
 
-  --bg-primary: #b82e12;
+  --bg-primary: #020617;
   --bg-secondary: #030712;
   --bg-card: #111827;
 
@@ -477,6 +477,7 @@ img {
 .achievement-text {
   color: var(--text-secondary);
 }
+
 /* ==========================
    PROJECTS
 ========================== */
