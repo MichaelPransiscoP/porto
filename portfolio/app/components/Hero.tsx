@@ -1,29 +1,5 @@
 "use client";
 
-
-const menus = [
-  {
-    title: "About",
-    href: "#about",
-  },
-  {
-    title: "Skills",
-    href: "#skills",
-  },
-  {
-    title: "Experience",
-    href: "#experience",
-  },
-  {
-    title: "Projects",
-    href: "#projects",
-  },
-  {
-    title: "Contact",
-    href: "#contact",
-  },
-];
-
 export default function Hero() {
   return (
     <section className="hero-section">
